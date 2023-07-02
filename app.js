@@ -23,11 +23,12 @@ const userSchema = new mongoose.Schema({
   password: String,
 });
 
+const User = new mongoose.model("User", userSchema);
+
 // var encKey = process.env.SOME_32BYTE_BASE64_STRING;
 // var sigKey = process.env.SOME_64BYTE_BASE64_STRING;
-// userSchema.plugin(encrypt, { encryptionKey: encKey, signingKey: sigKey });
 
-const User = new mongoose.model("User", userSchema);
+// userSchema.plugin(encrypt, { encryptionKey: encKey, signingKey: sigKey });
 
 app.get("/", function (req, res) {
   res.render("home");
